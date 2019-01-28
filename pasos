@@ -1,0 +1,33 @@
+Crear un carpeta del proyecto
+Inicializar el proyecto y crear el package.json con: npm init
+Instalar Babel tool, junto con los presets y plugins que se usaran:
+npm install babel-cli --save-dev
+npm install --save-dev babel-preset-es2015 babel-plugin-transform-async-to-generato  o'
+
+yarn add babel-cli --save-dev
+yarn add --save-dev babel-preset-es2015 babel-plugin-transform-async-to-generator
+
+Instalar openbabel:  sudo apt install openbabel
+Configurar Babel para usar los presets ay plugins, crear un .babelrc y agregar: 
+{
+    "presets": ["es2015"],
+    "plugins": ["transform-async-to-generator"]
+}
+
+Crear una carpeta "src" y dentro un archivo main.js y escribir codigo.
+Crear uns carpeta "dist"
+
+Para crear la version transpilada de main.js, en main.transpiled.js agregar en package.json:
+
+  "scripts": {
+    "build": "babel --presets es2015 src -d dist --watch"  //
+  },
+
+// --watch es para que se transpilen los cambios automaticamente
+Y correr: npm run build
+
+// ?? archivo para mapear el contenido de index.transpiled.js con el .js                            
+// ?? original,index.transpiled.js.map
+  
+
+
